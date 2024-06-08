@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-// Using a simple custom cache
+// Using a simple custom cache for images
 // 3rd party caches like Nuke or KingFisher are also other options
 class ImageCache {
     static let shared = ImageCache()

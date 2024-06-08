@@ -88,7 +88,6 @@ struct RecipeDetailsView: View {
             withAnimation {
                 isInitializing = false
             }
-      
         }
         
         // Error handling alerts

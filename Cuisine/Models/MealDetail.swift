@@ -7,7 +7,7 @@
 
 import Foundation
 
-// Renamed the variables to make it a bit more cleaner
+// Renamed the variables to make it a bit more clean
 struct MealDetail: Identifiable, Decodable {
     
     let id: String
@@ -69,7 +69,7 @@ struct MealDetail: Identifiable, Decodable {
     let dateModifed: String?
     
     // Since these are given as individual ingredients and measurements, its best to combine them
-    // Could also do this within coding within a decoder
+    // Could also do this within a decoder
     // This should also be combined server side rather than having to combine on the front end
     var ingredientsMap: [String:String] {
         
@@ -139,6 +139,7 @@ struct MealDetail: Identifiable, Decodable {
         return ingredientsMap
     }
     
+    // Combining different information
     var aboutMap: [String:String] {
         
         var aboutMap: [String:String] = [:]
@@ -164,8 +165,8 @@ struct MealDetail: Identifiable, Decodable {
         return aboutMap
     }
     
-    // Manual Coding Keys should be non-existent in newer project
-    // synchronization is critical which reduces bugs and failure points
+    // Manual Coding Keys should be non-existent in newer projects
+    // Synchronization is critical which reduces bugs and failure points
     // ---> using keyDecodingStrategies is preferred <----
     enum CodingKeys: String, CodingKey {
         
@@ -226,10 +227,10 @@ struct MealDetail: Identifiable, Decodable {
         case sourceImageUrl = "strImageSource"
         case creativeCommonsConfirmed = "strCreativeCommonsConfirmed"
         case dateModifed = "dateModified"
-        
     }
 }
 
+// Mock Detail
 extension MealDetail {
  
     static var MOCK_MEAL_DETAIL: MealDetail {
@@ -287,5 +288,4 @@ extension MealDetail {
               creativeCommonsConfirmed: nil,
               dateModifed: nil)
     }
-    
 }

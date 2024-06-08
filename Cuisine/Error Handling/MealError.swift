@@ -7,6 +7,7 @@
 
 import Foundation
 
+// Errors for retrieving meals or meal details
 enum MealError: Error {
     
     case invalidUrl

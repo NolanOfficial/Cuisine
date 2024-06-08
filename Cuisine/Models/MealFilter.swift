@@ -7,6 +7,7 @@
 
 import Foundation
 
+// Different filtering methods for meals
 enum MealFilter: String, CaseIterable {
     case alphabetical
     case id

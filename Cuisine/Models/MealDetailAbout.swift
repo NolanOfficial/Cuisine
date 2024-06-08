@@ -7,6 +7,7 @@
 
 import Foundation
 
+// Different information types about a recipe (meal)
 enum MealDetailAbout: String {
     
     case id
