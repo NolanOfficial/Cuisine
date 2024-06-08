@@ -16,9 +16,9 @@
 - Get all available details for listed recipes
 - Search for a specific recipe
 <p>
-<img src="image.png" width="300" height="650">
-<img src="image.png" width="300" height="650">
-<img src="image.png" width="300" height="650">
+<img src="CuisineLaunchLogo.png" width="300" height="650">
+<img src="Simulator Screenshot - Clone 1 of iPhone 15 Pro Max - 2024-06-08 at 14.17.50.png" width="300" height="650">
+<img src="Simulator Screenshot - Clone 1 of iPhone 15 Pro Max - 2024-06-08 at 14.18.15.png" width="300" height="650">
 </p>
 
 
