@@ -29,7 +29,7 @@
 - MVVM with an integrated service architecture
   - seperates enpoints and requests from view model
 
-### Loading View States
+### View States
 - Loading
 - Result
 - Empty/Error
