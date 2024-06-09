@@ -35,7 +35,7 @@ class MealService {
     
     // Retrieving meal details for the specified meal
     func getMealDetails(for meal: Meal) async throws -> MealDetail? {
-        // Ensuring the meal URL is valid
+        // Ensuring the meal details URL is valid
         guard let url = FetchAPI.mealDetails(meal: meal).url else { throw MealError.invalidUrl }
         // Custom URL session for downloading the data
         let (data, _) = try await URLSession.cuisineConfiguration.data(for: .cuisineRequest(url))
@@ -43,6 +43,4 @@ class MealService {
         let decodedData = try decoder.decode(MealDetailsResponse.self, from: data)
         return decodedData.meals.first
     }
-    
-    
 }
