@@ -26,8 +26,8 @@ class MealService {
     func getMeals(for category: MealCategory) async throws -> [Meal] {
         // Ensuring the meal URL is valid
         guard let url = FetchAPI.meal(category: category).url else { throw MealError.invalidUrl }
-        // URL session for downloading the data
-        let (data, _) = try await URLSession.shared.data(from: url)
+        // Custom URL session for downloading the data
+        let (data, _) = try await URLSession.cuisineConfiguration.data(for: .cuisineRequest(url))
         // Decoding the data
         let decodedData = try decoder.decode(MealsResponse.self, from: data)
         return decodedData.meals
@@ -37,8 +37,8 @@ class MealService {
     func getMealDetails(for meal: Meal) async throws -> MealDetail? {
         // Ensuring the meal URL is valid
         guard let url = FetchAPI.mealDetails(meal: meal).url else { throw MealError.invalidUrl }
-        // URL session for downloading the data
-        let (data, _) = try await URLSession.shared.data(from: url)
+        // Custom URL session for downloading the data
+        let (data, _) = try await URLSession.cuisineConfiguration.data(for: .cuisineRequest(url))
         // Decoding the data
         let decodedData = try decoder.decode(MealDetailsResponse.self, from: data)
         return decodedData.meals.first
