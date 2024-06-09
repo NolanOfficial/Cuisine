@@ -1,7 +1,7 @@
 ### Fetch's iOS Challenge
 
  # Welcome to *Cuisine*
-> Cuisine is iOS app to display food recipes from around the world
+> Cuisine is an iOS app that displays food recipes from around the world
 
 #### What we support ✅
 - iOS 15.0+
@@ -9,6 +9,7 @@
 
 ### Built using 👷🏻
 - Pure SwiftUI
+- Xcode 15.4
 
 ### Features 😎
 - Light/Dark Mode
