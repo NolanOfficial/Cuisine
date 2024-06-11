@@ -8,8 +8,11 @@
 import Foundation
 
 extension URLSession {
-    // This could also be created within a custom network layer
-    // (on top of the service layer)
+    
+    /// Custom URL Session that enables `waitForConnectivity` and `urlCache`
+    ///
+    /// - Note: This could also be created within a custom network layer
+    /// (on top of the service layer)
     static var cuisineConfiguration: URLSession {
         // Custom url session config
         let configuration = URLSessionConfiguration.default

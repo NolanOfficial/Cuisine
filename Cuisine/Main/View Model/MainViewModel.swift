@@ -7,12 +7,18 @@
 
 import Foundation
 
+/// View Model that represents the Main View
+///
+/// Contains all objects used for downloading and setting meals and meal details
+///
+/// - Attention: This class is run entirely on the main thread due to setting
+/// multiple variables through an async method.
 @MainActor
 class MainViewModel: ObservableObject {
     
     // MARK: Services
     
-    // Meal API service
+    /// Meal API service
     private let mealService = MealService.shared
     
     // MARK: Published values
@@ -38,7 +44,9 @@ class MainViewModel: ObservableObject {
     /// Boolean indicating wether to show the meal error
     @Published var showMealError = false
     
-    /// Asynchronously downloads meals from meal service API
+    // MARK: Functions
+    
+    /// Asynchronously downloads meals from the meal service API
     func getMeals() async {
         do {
             isDownloadingMeals = true
@@ -56,7 +64,7 @@ class MainViewModel: ObservableObject {
         }
     }
     
-    /// Asynchronously downloads meal details from meal service API
+    /// Asynchronously downloads meal details from the meal service API
     ///
     /// - Parameter meal: The meal in which to get the deatils for
     ///
