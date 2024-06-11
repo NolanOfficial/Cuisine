@@ -34,6 +34,10 @@
 - Result
 - Empty/Error
 
+### Network
+- Custom URL session configurations
+- Custom URL request configurations
+
 ### Caching
 - All images are cached
 
