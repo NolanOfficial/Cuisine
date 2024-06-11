@@ -27,6 +27,7 @@
 ## For Dev Review
 
 ### Architecture
+  <img src="Cuisine System Design.png" width="400" height="400">
 - MVVM with an integrated service architecture
   - seperates enpoints and requests from view model
 
