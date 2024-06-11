@@ -42,6 +42,7 @@
 
 ### Caching
 - All images are cached
+- All Urls are cached
 
 ### Testing
 - Unit Tests
