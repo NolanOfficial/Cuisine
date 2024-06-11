@@ -7,14 +7,22 @@
 
 import Foundation
 
+/// Meal Service Protocol
+protocol MealServiceProtocol {
+    func getMeals(for category: MealCategory) async throws -> [Meal]
+    func getMealDetails(for meal: Meal) async throws -> MealDetail?
+}
+
 /// This class represents a service atchitecture within MVVM
 ///
 /// When managing a lot of different microservices, this is the best (and most common) approach
 /// as it seperates view models from having to manage service requests
-class MealService {
+class MealService: MealServiceProtocol {
     
     /// Shared Singleton
     static let shared = MealService()
+    
+    let network = Network()
 
     /// A reusable meal service JSON decoder
     ///
@@ -36,11 +44,10 @@ class MealService {
     func getMeals(for category: MealCategory) async throws -> [Meal] {
         // Ensuring the meal URL is valid
         guard let url = FetchAPI.meal(category: category).url else { throw MealError.invalidUrl }
-        // Custom URL session for downloading the data
-        let (data, _) = try await URLSession.cuisineConfiguration.data(for: .cuisineRequest(url))
         // Decoding the data
-        let decodedData = try decoder.decode(MealsResponse.self, from: data)
-        return decodedData.meals
+        let response: MealsResponse = try await network.fetch(url)
+        // Return decoded meals
+        return response.meals
     }
     
     /// Downloads all meal details for the specified meal
@@ -51,10 +58,8 @@ class MealService {
     func getMealDetails(for meal: Meal) async throws -> MealDetail? {
         // Ensuring the meal details URL is valid
         guard let url = FetchAPI.mealDetails(meal: meal).url else { throw MealError.invalidUrl }
-        // Custom URL session for downloading the data
-        let (data, _) = try await URLSession.cuisineConfiguration.data(for: .cuisineRequest(url))
         // Decoding the data
-        let decodedData = try decoder.decode(MealDetailsResponse.self, from: data)
-        return decodedData.meals.first
+        let response: MealDetailsResponse = try await network.fetch(url)
+        return response.meals.first
     }
 }

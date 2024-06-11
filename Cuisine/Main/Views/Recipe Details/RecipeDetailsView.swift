@@ -31,12 +31,14 @@ struct RecipeDetailsView: View {
             }
             
             if isInitializing {
+                
                 // Skeleton Loading View
                 Section {
                     SkeletonDetailsView()
                         .listSectionSeparator(.hidden)
                         .listRowInsets(.zero)
                 }
+                
             } else if let mealDetail {
                 
                 // About
@@ -59,7 +61,6 @@ struct RecipeDetailsView: View {
                 .listSectionSeparator(.hidden)
                 .listRowInsets(.zero)
             
-                
                 // Instructions
                 if let instructions = mealDetail.instructions {
                     Section {
@@ -71,7 +72,6 @@ struct RecipeDetailsView: View {
                     .listSectionSeparator(.hidden)
                     .listRowInsets(.zero)
                 }
-                
                 
                 // Tags
                 if let tags = mealDetail.tags {
@@ -85,7 +85,6 @@ struct RecipeDetailsView: View {
                     .listRowInsets(.zero)
                 }
                
-
             } else {
                 // Error View
                 Section {
