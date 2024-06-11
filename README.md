@@ -10,6 +10,7 @@
 ### Built using 👷🏻
 - Pure SwiftUI
 - Xcode 15.4
+- All methods with async/await
 
 ### Features 😎
 - Light/Dark Mode
