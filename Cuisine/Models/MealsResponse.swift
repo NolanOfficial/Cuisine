@@ -10,5 +10,5 @@ import Foundation
 // The response for meals
 // This would usually be accompanied with a status message and optional status codes
 struct MealsResponse: Decodable {
-    var meals: [Meal]
+    let meals: [Meal]
 }

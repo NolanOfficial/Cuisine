@@ -7,32 +7,38 @@
 
 import Foundation
 
+@MainActor
 class MainViewModel: ObservableObject {
+    
+    // MARK: Services
     
     // Meal API service
     private let mealService = MealService.shared
     
-    // The meals retrieved to display from the selected category
+    // MARK: Published values
+    
+    /// The meals retrieved to display from the selected category
     @Published var meals: [Meal] = []
     
-    // The category of meals to display
+    /// The category of meals to display
     @Published var selectedCategory: MealCategory = .dessert
     
-    // The filter state of the meals
+    /// The filter state of the meals
     @Published var mealFilter: MealFilter = .alphabetical
     
-    // Boolean indicating if the view is loading for the first time
+    /// Boolean indicating if the view is loading for the first time
     @Published var isInitializing = true
     
-    // Boolean indicating if the current meal selection is downloading
+    /// Boolean indicating if the current meal selection is downloading
     @Published var isDownloadingMeals = false
     
-    // Meal error if thrown
+    /// Meal error if thrown
     @Published var mealError: MealError? = nil
+    
+    /// Boolean indicating wether to show the meal error
     @Published var showMealError = false
     
-    // Download and retrieve meals from meal service
-    @MainActor
+    /// Asynchronously downloads meals from meal service API
     func getMeals() async {
         do {
             isDownloadingMeals = true
@@ -50,7 +56,11 @@ class MainViewModel: ObservableObject {
         }
     }
     
-    @MainActor
+    /// Asynchronously downloads meal details from meal service API
+    ///
+    /// - Parameter meal: The meal in which to get the deatils for
+    ///
+    /// - returns: The meal details downloaded
     func getMealDetail(for meal: Meal) async -> MealDetail? {
         do {
             return try await mealService.getMealDetails(for: meal)
@@ -66,8 +76,7 @@ class MainViewModel: ObservableObject {
         return nil
     }
     
-    // Filtering meals based on filter selection
-    @MainActor
+    /// Filters meals based on filter selection
     func filterMeals() {
         switch mealFilter {
         case .alphabetical:

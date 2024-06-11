@@ -12,6 +12,7 @@ import Foundation
 // It seperates view models from having to manage service requests
 class MealService {
     
+    // Shared Singleton
     static let shared = MealService()
     
     // This is where a reusable custom decoder would be integrated
@@ -23,6 +24,7 @@ class MealService {
     }()
     
     // Retrieving all meals for the specified category
+    // 
     func getMeals(for category: MealCategory) async throws -> [Meal] {
         // Ensuring the meal URL is valid
         guard let url = FetchAPI.meal(category: category).url else { throw MealError.invalidUrl }

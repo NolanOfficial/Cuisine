@@ -74,67 +74,33 @@ struct MealDetail: Identifiable, Decodable {
     var ingredientsMap: [String:String] {
         
         var ingredientsMap: [String:String] = [:]
-            
-        if let ingredient = ingredientOne, !ingredient.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty, let measurement = measureOne, !measurement.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
-            ingredientsMap[ingredient] = measurement
+        
+        func addToIngredientsMap(_ ingredient: String?, _ measurement: String?) {
+            if let ingredient, !ingredient.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty, let measurement, !measurement.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
+                ingredientsMap[ingredient] = measurement
+            }
         }
-        if let ingredient = ingredientTwo, !ingredient.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty, let measurement = measureTwo, !measurement.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
-            ingredientsMap[ingredient] = measurement
-        }
-        if let ingredient = ingredientThree, !ingredient.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty, let measurement = measureThree, !measurement.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
-            ingredientsMap[ingredient] = measurement
-        }
-        if let ingredient = ingredientFour, !ingredient.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty, let measurement = measureFour, !measurement.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
-            ingredientsMap[ingredient] = measurement
-        }
-        if let ingredient = ingredientFive, !ingredient.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty, let measurement = measureFive, !measurement.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
-            ingredientsMap[ingredient] = measurement
-        }
-        if let ingredient = ingredientSix, !ingredient.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty, let measurement = measureSix, !measurement.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
-            ingredientsMap[ingredient] = measurement
-        }
-        if let ingredient = ingredientSeven, !ingredient.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty, let measurement = measureSeven, !measurement.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
-            ingredientsMap[ingredient] = measurement
-        }
-        if let ingredient = ingredientEight, !ingredient.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty, let measurement = measureEight, !measurement.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
-            ingredientsMap[ingredient] = measurement
-        }
-        if let ingredient = ingredientNine, !ingredient.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty, let measurement = measureNine, !measurement.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
-            ingredientsMap[ingredient] = measurement
-        }
-        if let ingredient = ingredientTen, !ingredient.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty, let measurement = measureTen, !measurement.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
-            ingredientsMap[ingredient] = measurement
-        }
-        if let ingredient = ingredientEleven, !ingredient.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty, let measurement = measureEleven, !measurement.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
-            ingredientsMap[ingredient] = measurement
-        }
-        if let ingredient = ingredientTwelve, !ingredient.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty, let measurement = measureTwelve, !measurement.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
-            ingredientsMap[ingredient] = measurement
-        }
-        if let ingredient = ingredientThirteen, !ingredient.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty, let measurement = measureThirteen, !measurement.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
-            ingredientsMap[ingredient] = measurement
-        }
-        if let ingredient = ingredientFourteen, !ingredient.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty, let measurement = measureFourteen, !measurement.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
-            ingredientsMap[ingredient] = measurement
-        }
-        if let ingredient = ingredientFifteen, !ingredient.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty, let measurement = measureFifteen, !measurement.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
-            ingredientsMap[ingredient] = measurement
-        }
-        if let ingredient = ingredientSixteen, !ingredient.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty, let measurement = measureSixteen, !measurement.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
-            ingredientsMap[ingredient] = measurement
-        }
-        if let ingredient = ingredientSeventeen, !ingredient.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty, let measurement = measureSeventeen, !measurement.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
-            ingredientsMap[ingredient] = measurement
-        }
-        if let ingredient = ingredientEighteen, !ingredient.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty, let measurement = measureEighteen, !measurement.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
-            ingredientsMap[ingredient] = measurement
-        }
-        if let ingredient = ingredientNineteen, !ingredient.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty, let measurement = measureNineteen, !measurement.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
-            ingredientsMap[ingredient] = measurement
-        }
-        if let ingredient = ingredientTwenty, !ingredient.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty, let measurement = measureTwenty, !measurement.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
-            ingredientsMap[ingredient] = measurement
-        }
+        
+        addToIngredientsMap(ingredientOne, measureOne)
+        addToIngredientsMap(ingredientTwo, measureTwo)
+        addToIngredientsMap(ingredientThree, measureThree)
+        addToIngredientsMap(ingredientFour, measureFour)
+        addToIngredientsMap(ingredientFive, measureFive)
+        addToIngredientsMap(ingredientSix, measureSix)
+        addToIngredientsMap(ingredientSeven, measureSeven)
+        addToIngredientsMap(ingredientEight, measureEight)
+        addToIngredientsMap(ingredientNine, measureNine)
+        addToIngredientsMap(ingredientTen, measureTen)
+        addToIngredientsMap(ingredientEleven, measureEleven)
+        addToIngredientsMap(ingredientTwelve, measureTwelve)
+        addToIngredientsMap(ingredientThirteen, measureThirteen)
+        addToIngredientsMap(ingredientFourteen, measureFourteen)
+        addToIngredientsMap(ingredientFifteen, measureFifteen)
+        addToIngredientsMap(ingredientSixteen, measureSixteen)
+        addToIngredientsMap(ingredientSeventeen, measureSeventeen)
+        addToIngredientsMap(ingredientEighteen, measureEighteen)
+        addToIngredientsMap(ingredientNineteen, measureNineteen)
+        addToIngredientsMap(ingredientTwenty, measureTwenty)
         
         return ingredientsMap
     }
