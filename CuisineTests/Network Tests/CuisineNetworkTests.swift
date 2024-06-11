@@ -11,22 +11,20 @@ import XCTest
 final class CuisineNetworkTests: XCTestCase {
     
     /// URL session with no data saving or caching
-    var urlSession: URLSession
-    /// Network
-    var network: NetworkProtocol
+    var urlSession: URLSession!
     
-    init(urlSession: URLSession, network: NetworkProtocol) {
+    /// Network
+    var network: NetworkProtocol!
+    
+    override func setUp() {
         let config = URLSessionConfiguration.ephemeral
         config.protocolClasses = [MockURLProtocol.self]
-        let mockSession = URLSession(configuration: config)
-        self.urlSession = mockSession
-        self.network = Network(urlSession: mockSession)
-
-        super.init()
+        urlSession = URLSession(configuration: config)
+        network = Network(urlSession: urlSession)
     }
     
     /// Tests the the success of the network fetch method
-    func test_Fetch_Data_Success() async throws {
+    func test_Fetch_Meals_Success() async throws {
         
         // Fetching meal url from category
         guard let url = FetchAPI.meal(category: .dessert).url else { throw URLError(.badURL) }
@@ -46,6 +44,31 @@ final class CuisineNetworkTests: XCTestCase {
         
         XCTAssertEqual(data.meals.first?.name, "Battenberg Cake")
         XCTAssertEqual(data.meals.first?.thumbnailUrl, URL(string: "https://www.themealdb.com/images/media/meals/ywwrsp1511720277.jpg"))
+        XCTAssertEqual(data.meals.first?.id, "52894")
+    }
+    
+    /// Tests the the success of the network fetch method
+    func test_Fetch_Meal_Details_Success() async throws {
+        
+        // Fetching meal url from category
+        guard let url = FetchAPI.mealDetails(meal: Meal.MOCK_MEAL).url else { throw URLError(.badURL) }
+        
+        // Creating a mock response from the url
+        guard let response = HTTPURLResponse(url: url,
+                                             statusCode: 200,
+                                             httpVersion: nil,
+                                             headerFields: ["Content-Type": "application/json"]) else { throw URLError(.badServerResponse) }
+        
+        MockURLProtocol.requestHandler = { request in
+            guard let mockData = MockDataJSON.mockMealDetailsData.data(using: .utf8) else { throw URLError(.cannotDecodeRawData) }
+            return (mockData, response)
+        }
+        
+        let data: MealDetailsResponse = try await network.fetch(url)
+        
+        XCTAssertEqual(data.meals.first?.name, "Battenberg Cake")
+        XCTAssertEqual(data.meals.first?.area, "British")
+        XCTAssertEqual(data.meals.first?.ingredientNine, "Butter")
         XCTAssertEqual(data.meals.first?.id, "52894")
     }
     

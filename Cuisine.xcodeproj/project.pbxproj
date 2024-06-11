@@ -308,9 +308,9 @@
 		6AD288D52C18D5FC003A8F40 /* Network Tests */ = {
 			isa = PBXGroup;
 			children = (
+				6AD288D32C18D3FC003A8F40 /* CuisineNetworkTests.swift */,
 				6AD288D82C18D7D6003A8F40 /* MockDataJSON.swift */,
 				6AD288D62C18D604003A8F40 /* MockURLProtocol.swift */,
-				6AD288D32C18D3FC003A8F40 /* CuisineNetworkTests.swift */,
 			);
 			path = "Network Tests";
 			sourceTree = "<group>";
