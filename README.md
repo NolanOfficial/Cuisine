@@ -3,7 +3,7 @@
  # Welcome to *Cuisine*
 > Cuisine is an iOS app that displays food recipes from around the world
 
-#### What we support ✅
+### What we support ✅
 - iOS 15.0+
 - Xcode 14.0+
 
@@ -43,6 +43,10 @@
 
 ### Testing
 - Unit Tests
+  - Network
+    - Success
+    - Server Fail
+    - JSON Fail
   - Filter
   - Correct Initialization
     
