@@ -11,7 +11,7 @@ struct RoundedRectBackground: ViewModifier {
     func body(content: Content) -> some View {
         content
             .frame(minWidth: 12)
-            .font(.footnote)
+            .font(.footnote.weight(.semibold))
             .padding(6)
             .foregroundStyle(.orange)
             .background(.regularMaterial)

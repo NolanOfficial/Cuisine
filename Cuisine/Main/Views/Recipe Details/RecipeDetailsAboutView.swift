@@ -12,13 +12,6 @@ struct RecipeDetailsAboutView: View {
     let mealDetail: MealDetail
     
     var body: some View {
-
-        HStack {
-            Text("About")
-                .font(.headline)
-            Spacer()
-        }
-        .padding()
             
         ForEach(Array(mealDetail.aboutMap.keys).sorted(by: { $0 < $1 }), id: \.self) { about in
                 
@@ -35,14 +28,12 @@ struct RecipeDetailsAboutView: View {
                     if aboutEnum == .website || aboutEnum == .youtube {
                         if let url = URL(string: detail) {
                             Link(destination: url) {
-                                Text(detail)
-                                    .font(.subheadline)
+                                Text(aboutEnum == .website ? "Website" : "YouTube")
                                     .roundedRectBackground()
                             }
                         }
                     } else {
                         Text(detail)
-                            .font(.subheadline)
                             .roundedRectBackground()
                     }
                 }

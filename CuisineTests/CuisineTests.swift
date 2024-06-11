@@ -10,6 +10,7 @@ import XCTest
 
 final class CuisineTests: XCTestCase {
     
+    @MainActor
     let viewModel = MainViewModel()
 
     override func setUpWithError() throws {

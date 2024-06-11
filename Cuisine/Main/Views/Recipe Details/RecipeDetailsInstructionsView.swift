@@ -9,26 +9,15 @@ import SwiftUI
 
 struct RecipeDetailsInstructionsView: View {
     
-    let mealDetail: MealDetail
+    let instructions: String
     
     var body: some View {
-        if let instructions = mealDetail.instructions {
-            VStack {
-                HStack {
-                    Text("Instructions")
-                        .font(.headline)
-                    Spacer()
-                }
-                .padding(.bottom)
-                
-                Text(instructions)
-                    .font(.subheadline)
-            }
-            .padding()
-        }
+        Text(instructions)
+            .font(.subheadline)
+            .padding(.horizontal)
     }
 }
 
 #Preview {
-    RecipeDetailsInstructionsView(mealDetail: .MOCK_MEAL_DETAIL)
+    RecipeDetailsInstructionsView(instructions: MealDetail.MOCK_MEAL_DETAIL.instructions ?? "No Mock Data")
 }

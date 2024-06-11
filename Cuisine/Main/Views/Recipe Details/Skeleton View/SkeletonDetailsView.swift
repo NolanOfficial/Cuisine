@@ -15,16 +15,15 @@ struct SkeletonDetailsView: View {
     
     private func skeletonView() -> some View {
         return VStack(spacing: 22) {
+            
             HStack {
-                Text("Lorem Imps")
+                Text("Lorem Impsum")
+                    .sectionTitle()
                 Spacer()
             }
-        
-            
+           
             ForEach(0..<7) { _ in
-                
                 HStack(spacing: 10) {
-                   
                     Rectangle()
                         .fill(.quaternary)
                         .frame(width: 15, height: 15)
@@ -38,7 +37,9 @@ struct SkeletonDetailsView: View {
                     }
                 }
             }
-        }.redacted(reason: .placeholder).padding()
+        }
+        .redacted(reason: .placeholder)
+        .padding()
     }
     
     var body: some View {

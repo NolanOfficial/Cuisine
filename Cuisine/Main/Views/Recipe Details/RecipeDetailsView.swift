@@ -42,6 +42,9 @@ struct RecipeDetailsView: View {
                 // About
                 Section {
                     RecipeDetailsAboutView(mealDetail: mealDetail)
+                } header: {
+                    Text("About")
+                        .sectionTitle()
                 }
                 .listSectionSeparator(.hidden)
                 .listRowInsets(.zero)
@@ -49,24 +52,39 @@ struct RecipeDetailsView: View {
                 // Ingredients
                 Section {
                     RecipeDetailsIngredientsView(mealDetail: mealDetail)
+                } header: {
+                    Text("Ingredients")
+                        .sectionTitle()
                 }
                 .listSectionSeparator(.hidden)
                 .listRowInsets(.zero)
             
                 
                 // Instructions
-                Section {
-                    RecipeDetailsInstructionsView(mealDetail: mealDetail)
+                if let instructions = mealDetail.instructions {
+                    Section {
+                        RecipeDetailsInstructionsView(instructions: instructions)
+                    } header: {
+                        Text("Instructions")
+                            .sectionTitle()
+                    }
+                    .listSectionSeparator(.hidden)
+                    .listRowInsets(.zero)
                 }
-                .listSectionSeparator(.hidden)
-                .listRowInsets(.zero)
+                
                 
                 // Tags
-                Section {
-                    RecipeDetailsTagsView(mealDetail: mealDetail)
+                if let tags = mealDetail.tags {
+                    Section {
+                        RecipeDetailsTagsView(tags: tags)
+                    } header: {
+                        Text("Tags")
+                            .sectionTitle()
+                    }
+                    .listSectionSeparator(.hidden)
+                    .listRowInsets(.zero)
                 }
-                .listSectionSeparator(.hidden)
-                .listRowInsets(.zero)
+               
 
             } else {
                 // Error View

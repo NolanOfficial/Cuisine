@@ -11,4 +11,8 @@ extension View {
     func roundedRectBackground() -> some View {
         modifier(RoundedRectBackground())
     }
+    
+    func sectionTitle() -> some View {
+        modifier(SectionTitle())
+    }
 }

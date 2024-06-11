@@ -9,31 +9,20 @@ import SwiftUI
 
 struct RecipeDetailsTagsView: View {
     
-    let mealDetail: MealDetail
+    let tags: String
     
     var body: some View {
-        if let tags = mealDetail.tags {
-            VStack {
-                HStack {
-                    Text("Tags")
-                        .font(.headline)
-                    Spacer()
-                }
-                
-                HStack {
-                    ForEach(tags.split(separator: ","), id: \.self) { tag in
-                        Text(tag)
-                            .font(.subheadline)
-                            .roundedRectBackground()
-                    }
-                    Spacer()
-                }
+        HStack {
+            ForEach(tags.split(separator: ","), id: \.self) { tag in
+                Text(tag)
+                    .roundedRectBackground()
             }
-            .padding()
+            Spacer()
         }
+        .padding(.horizontal)
     }
 }
 
 #Preview {
-    RecipeDetailsTagsView(mealDetail: .MOCK_MEAL_DETAIL)
+    RecipeDetailsTagsView(tags: MealDetail.MOCK_MEAL_DETAIL.tags ?? "No Mock Data")
 }

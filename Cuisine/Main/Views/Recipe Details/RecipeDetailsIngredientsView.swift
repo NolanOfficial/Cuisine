@@ -13,17 +13,8 @@ struct RecipeDetailsIngredientsView: View {
     
     var body: some View {
         
-        HStack {
-            Text("Ingredients")
-                .font(.headline)
-            Spacer()
-        }
-        .listRowSeparator(.hidden)
-        .padding()
-     
-        
+        /// Apple's Collections Package `OrderedDictionary` is much more preferable here
         ForEach(Array(mealDetail.ingredientsMap.keys), id: \.self) { ingredient in
-            
             HStack {
                 Image(systemName: "fork.knife.circle")
                     .imageScale(.large)
@@ -33,7 +24,7 @@ struct RecipeDetailsIngredientsView: View {
                 
                 Spacer()
                 
-                Text(mealDetail.ingredientsMap[ingredient] ?? "Error")
+                Text(mealDetail.ingredientsMap[ingredient] ?? "Unkown")
                     .font(.subheadline)
                     .foregroundStyle(.secondary)
             }
