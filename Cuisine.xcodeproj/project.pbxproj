@@ -315,6 +315,14 @@
 			path = "Network Tests";
 			sourceTree = "<group>";
 		};
+		6AD288DF2C18EEF3003A8F40 /* Main Tests */ = {
+			isa = PBXGroup;
+			children = (
+				6AD430792C0F8081008BD892 /* CuisineTests.swift */,
+			);
+			path = "Main Tests";
+			sourceTree = "<group>";
+		};
 		6AD4305C2C0F8080008BD892 = {
 			isa = PBXGroup;
 			children = (
@@ -365,8 +373,8 @@
 		6AD430782C0F8081008BD892 /* CuisineTests */ = {
 			isa = PBXGroup;
 			children = (
+				6AD288DF2C18EEF3003A8F40 /* Main Tests */,
 				6AD288D52C18D5FC003A8F40 /* Network Tests */,
-				6AD430792C0F8081008BD892 /* CuisineTests.swift */,
 			);
 			path = CuisineTests;
 			sourceTree = "<group>";
