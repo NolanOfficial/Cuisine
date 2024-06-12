@@ -49,15 +49,18 @@
 - Swedish
 
 ### Testing
-- Unit Tests
-  - Network
-    - Success
-    - Server Fail
-    - JSON Fail
+> Unit Tests
+- `CuisineNetworkTests`
+  - Success
+  - Server Fail
+  - JSON Fail
+       
+- `CuisineMainTests`
   - Filter
   - Correct Initialization
     
-- UI Tests
+> UI Tests
+- `CuisineUITests`
   - Dessert card exists
   - Dessert category exists
   - Filter alphabetical button exists
