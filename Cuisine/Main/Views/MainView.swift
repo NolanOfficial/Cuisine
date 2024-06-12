@@ -13,17 +13,7 @@ struct MainView: View {
     @StateObject private var viewModel = MainViewModel()
     
     // Search text for recipes
-    @State private var mealSearchText = ""
-    // Search text results (filters name or id)
-    var searchResults: [Meal] {
-        if mealSearchText.isEmpty {
-            return viewModel.meals
-        } else {
-            return viewModel.meals.filter { 
-                $0.name.lowercased().contains(mealSearchText.lowercased()) ||
-                $0.id.contains(mealSearchText) }
-        }
-    }
+    @State private var searchText = ""
     
     var body: some View {
         
@@ -36,49 +26,55 @@ struct MainView: View {
                 
                 // Categories Section
                 Section {
-                    MealCategoryView(viewModel: viewModel)
+                    MealCategoryView(category: $viewModel.selectedCategory)
                 }
                 
-                if viewModel.isInitializing || viewModel.isDownloadingMeals {
+                // Switching over the different view state models
+                switch viewModel.state {
+                    
+                case .loading:
                     // Skeleton View (initializing)
                     Section {
-                        Text("Recipes")
-                            .font(.headline)
-                            .listRowSeparator(.hidden)
-                        
                         SkeletonMealsView()
                             .listRowSeparator(.hidden)
-                    }
-                    
-                } else if searchResults.isEmpty {
-                    // If no recipes found, show custom empty view
-                    Section {
-                        EmptyMealsView()
-                            .padding(.top)
+                    } header: {
+                        Text("Recipes")
+                            .listRowInsets(.zero)
                             .listRowSeparator(.hidden)
+                            .sectionTitle()
+                            .redacted(reason: .placeholder)
                     }
                     
-                } else {
+                case .result:
                     // Recipe card view
                     Section {
-                        HStack {
-                            Text("Recipes")
-                                .font(.headline)
-                             
-                            Text(searchResults.count, format: .number)
-                                .roundedRectBackground()
-                        }
-                        .listRowSeparator(.hidden)
-                       
-                        // Pagination would be integrated here if the api request supported it
-                        ForEach(searchResults) { meal in
+                        ForEach(viewModel.mealsSearchResults) { meal in
                             NavigationLink {
-                                RecipeDetailsView(meal: meal, viewModel: viewModel)
+                                RecipeDetailsView(meal: meal)
                             } label: {
                                 RecipeView(meal: meal)
                             }
                             .accessibilityIdentifier("\(meal.name) Recipe")
                         }
+                        .listRowSeparator(.hidden)
+                    } header: {
+                        HStack {
+                            Text("Recipes")
+                            
+                            Text(viewModel.mealsSearchResults.count, format: .number)
+                                .roundedRectBackground()
+                        }
+                        .listRowInsets(.zero)
+                        .listRowSeparator(.hidden)
+                        .sectionTitle()
+                    }
+                    
+                case .empty, .error :
+                    // If no recipes found, show custom empty view
+                    Section {
+                        EmptyMealsView()
+                            .padding(.top)
+                            .listRowSeparator(.hidden)
                     }
                 }
             }
@@ -86,27 +82,26 @@ struct MainView: View {
             // View modifcations
             .listStyle(.plain)
             .navigationTitle("Cuisine")
-            .searchable(text: $mealSearchText, placement: .navigationBarDrawer(displayMode: .always))
+            .searchable(text: $searchText, placement: .navigationBarDrawer(displayMode: .always))
             
             // Toolbar for filter button
             .toolbar {
-               MealFilterButton(viewModel: viewModel)
+                MealFilterButton(mealFilter: $viewModel.mealFilter)
             }
             
             // Initializing
-            // Would usually have task cancellation checks
-            // Since we don't have multiple navigation stacks, it's not needed
             .task {
-                guard viewModel.isInitializing else { return }
                 await viewModel.getMeals()
-                withAnimation {
-                    viewModel.isInitializing = false
-                }
             }
             
             // Refreshable
             .refreshable {
                 await viewModel.getMeals()
+            }
+            
+            // Search meals from the user's input
+            .onChange(of: searchText) { value in
+                viewModel.searchMeals(with: value)
             }
             
             // Changing meal category
@@ -122,12 +117,12 @@ struct MainView: View {
             }
             
             // Error handling alerts
-            .alert(viewModel.mealError?.title ?? MealError.unknown.title, isPresented: $viewModel.showMealError) {
+            .alert(viewModel.error?.title ?? MealError.unknown.title, isPresented: $viewModel.showError) {
                 Button("Ok") {
-                    viewModel.mealError = nil
+                    viewModel.error = nil
                 }
             } message: {
-                Text(viewModel.mealError?.message ?? MealError.unknown.message)
+                Text(viewModel.error?.message ?? MealError.unknown.message)
             }
         }
     }

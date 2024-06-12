@@ -9,6 +9,7 @@ import SwiftUI
 
 @main
 struct CuisineApp: App {
+    
     var body: some Scene {
         WindowGroup {
             MainView()

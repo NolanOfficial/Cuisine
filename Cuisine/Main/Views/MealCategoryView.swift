@@ -9,14 +9,14 @@ import SwiftUI
 
 struct MealCategoryView: View {
     
-    @ObservedObject var viewModel: MainViewModel
+    @Binding var category: MealCategory
     
     var body: some View {
         HStack {
             Text("Categories")
                 .font(.headline)
             
-            Text(viewModel.selectedCategory.rawValue.capitalized.localized)
+            Text(category.rawValue.capitalized.localized)
                 .roundedRectBackground()
         }
         .listRowSeparator(.hidden)
@@ -29,7 +29,7 @@ struct MealCategoryView: View {
                 ForEach(MealCategory.allCases, id: \.self) { cuisine in
                     
                     Button {
-                        viewModel.selectedCategory = cuisine
+                        category = cuisine
                     } label: {
                         VStack {
                             Image(cuisine.rawValue)
@@ -40,7 +40,7 @@ struct MealCategoryView: View {
                             Text(cuisine.rawValue.capitalized.localized)
                                 .font(.footnote)
                         }
-                        .foregroundStyle(viewModel.selectedCategory == cuisine ? .orange : .primary)
+                        .foregroundStyle(category == cuisine ? .orange : .primary)
                     }
                     .accessibilityIdentifier("\(cuisine.rawValue.capitalized) Meal Category")
                 }
@@ -54,5 +54,6 @@ struct MealCategoryView: View {
 }
 
 #Preview {
-    MealCategoryView(viewModel: MainViewModel())
+    @State var category: MealCategory = .dessert
+    MealCategoryView(category: $category)
 }

@@ -11,14 +11,9 @@ import SwiftUI
 ///
 /// - Note: 3rd party caches like Nuke or KingFisher are also other options
 class ImageCache {
-    
-    /// Shared singleton
-    static let shared = ImageCache()
 
     /// A cache object that stores a path string for each image
     private let cache = NSCache<NSString, UIImage>()
-
-    private init() {}
 
     /// Sets a path with the given key for the given image
     ///

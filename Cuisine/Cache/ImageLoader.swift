@@ -11,6 +11,8 @@ import SwiftUI
 @MainActor
 class ImageLoader: ObservableObject {
     
+    private let imageCache = ImageCache()
+    
     /// Optional image to retrieve
     @Published var image: UIImage?
     
@@ -41,7 +43,7 @@ class ImageLoader: ObservableObject {
         
         guard let url else { throw URLError(.badURL) }
         
-        if let cachedImage = ImageCache.shared.get(forKey: url.absoluteString) {
+        if let cachedImage = imageCache.get(forKey: url.absoluteString) {
             self.image = cachedImage
             return
         }
@@ -52,6 +54,6 @@ class ImageLoader: ObservableObject {
         // Setting the image and cache path, if available
         guard let image = UIImage(data: data) else { throw URLError(.cannotDecodeContentData) }
         self.image = image
-        ImageCache.shared.set(image, forKey: url.absoluteString)
+        imageCache.set(image, forKey: url.absoluteString)
     }
 }

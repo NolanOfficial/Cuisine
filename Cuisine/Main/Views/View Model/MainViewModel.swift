@@ -5,7 +5,7 @@
 //  Created by Nolan Fuchs on 6/7/24.
 //
 
-import Foundation
+import SwiftUI
 
 /// View Model that represents the Main View
 ///
@@ -19,12 +19,15 @@ class MainViewModel: ObservableObject {
     // MARK: Services
     
     /// Meal API service
-    private let mealService = MealService.shared
+    private let mealService = MealService()
     
     // MARK: Published values
     
     /// The meals retrieved to display from the selected category
     @Published var meals: [Meal] = []
+    
+    /// The meals retrieved to display from the selected category
+    @Published var mealsSearchResults: [Meal] = []
     
     /// The category of meals to display
     @Published var selectedCategory: MealCategory = .dessert
@@ -32,56 +35,45 @@ class MainViewModel: ObservableObject {
     /// The filter state of the meals
     @Published var mealFilter: MealFilter = .alphabetical
     
-    /// Boolean indicating if the view is loading for the first time
-    @Published var isInitializing = true
-    
-    /// Boolean indicating if the current meal selection is downloading
-    @Published var isDownloadingMeals = false
+    /// Boolean indicating the state of the view
+    @Published var state: LoadingState = .loading
     
     /// Meal error if thrown
-    @Published var mealError: MealError? = nil
+    @Published var error: MealError? = nil
     
     /// Boolean indicating wether to show the meal error
-    @Published var showMealError = false
+    @Published var showError = false
     
     // MARK: Functions
     
     /// Asynchronously downloads meals from the meal service API
     func getMeals() async {
         do {
-            isDownloadingMeals = true
+            // Setting the view state to loading
+            state = .loading
+            
+            // Asynchronously set meals
             meals = try await mealService.getMeals(for: selectedCategory)
+            mealsSearchResults = meals
+            
+            // Filter the meals
             filterMeals()
-            isDownloadingMeals = false
+            
+            // Update the view state
+            state = meals.isEmpty ? .empty : .result
         } catch let error as MealError {
-            // Retrieving custom error handles
-            mealError = error
-            showMealError = true
+            // Setting custom error
+            self.error = error
+            showError = true
+            // Set error view state
+            state = .error
         } catch {
             // Setting generic error
-            mealError = MealError.unknown
-            showMealError = true
+            self.error = MealError.unknown
+            showError = true
+            // Set error view state
+            state = .error
         }
-    }
-    
-    /// Asynchronously downloads meal details from the meal service API
-    ///
-    /// - Parameter meal: The meal in which to get the deatils for
-    ///
-    /// - returns: The meal details downloaded
-    func getMealDetail(for meal: Meal) async -> MealDetail? {
-        do {
-            return try await mealService.getMealDetails(for: meal)
-        } catch let error as MealError {
-            // Retrieving custom error handles
-            mealError = error
-            showMealError = true
-        } catch {
-            // Setting generic error
-            mealError = MealError.unknown
-            showMealError = true
-        }
-        return nil
     }
     
     /// Filters meals based on filter selection
@@ -91,6 +83,20 @@ class MainViewModel: ObservableObject {
             meals.sort(by: { $0.name < $1.name })
         case .id:
             meals.sort(by: { $0.id < $1.id })
+        }
+    }
+    
+    /// Function is called as the user types to search for a meal
+    ///
+    /// - Parameter searchText: String of what the user has currently typed
+    func searchMeals(with searchText: String) {
+        if searchText.isEmpty {
+            mealsSearchResults = meals
+        } else {
+            let filteredResults = meals.filter {
+                $0.name.lowercased().contains(searchText.lowercased()) ||
+                $0.id.contains(searchText) }
+            mealsSearchResults = filteredResults
         }
     }
 }

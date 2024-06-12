@@ -9,18 +9,18 @@ import SwiftUI
 
 struct MealFilterButton: View {
     
-    @ObservedObject var viewModel: MainViewModel
+    @Binding var mealFilter: MealFilter
     
     var body: some View {
         Menu {
             ForEach(MealFilter.allCases, id: \.self) { filter in
                 Button {
-                    viewModel.mealFilter = filter
+                    mealFilter = filter
                 } label: {
                     HStack {
                         Text(LocalizedStringKey(filter.rawValue.capitalized))
                         Spacer()
-                        if viewModel.mealFilter == filter {
+                        if mealFilter == filter {
                             Image(systemName: "arrow.down")
                         }
                     }
@@ -30,12 +30,13 @@ struct MealFilterButton: View {
         } label: {
             Image(systemName: "slider.horizontal.3")
         }
-        .foregroundStyle(viewModel.mealFilter == .alphabetical ? .white : .orange)
+        .foregroundStyle(mealFilter == .alphabetical ? .white : .orange)
         .accessibilityLabel("Recipe Filter Menu")
     }
 }
 
 #Preview {
-    MealFilterButton(viewModel: MainViewModel())
+    @State var filter: MealFilter = .alphabetical
+    MealFilterButton(mealFilter: $filter)
 }
 

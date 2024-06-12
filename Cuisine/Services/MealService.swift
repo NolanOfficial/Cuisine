@@ -19,9 +19,6 @@ protocol MealServiceProtocol {
 /// as it seperates view models from having to manage service requests
 class MealService: MealServiceProtocol {
     
-    /// Shared Singleton
-    static let shared = MealService()
-    
     let network = Network()
 
     /// A reusable meal service JSON decoder
