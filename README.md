@@ -10,6 +10,7 @@
 ### Built using 👷🏻
 - Pure SwiftUI
 - Xcode 15.4
+- All methods with async/await
 
 ### Features 😎
 - Light/Dark Mode
@@ -26,6 +27,7 @@
 ## For Dev Review
 
 ### Architecture
+  <img src="Cuisine System Design.png" width="400" height="400">
 - MVVM with an integrated service architecture
   - seperates enpoints and requests from view model
 
@@ -40,6 +42,7 @@
 
 ### Caching
 - All images are cached
+- All Urls are cached
 
 ### Testing
 - Unit Tests
