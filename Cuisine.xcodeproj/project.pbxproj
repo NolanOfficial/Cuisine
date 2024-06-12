@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		6A395DCC2C192FCE00FE2D77 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 6A395DCB2C192FCE00FE2D77 /* Localizable.xcstrings */; };
 		6A395DD02C1942C200FE2D77 /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A395DCF2C1942BF00FE2D77 /* String+.swift */; };
+		6A395DD22C19489200FE2D77 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A395DD12C19488D00FE2D77 /* ImageLoader.swift */; };
+		6A395DD42C1948B100FE2D77 /* RemoteImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A395DD32C1948AF00FE2D77 /* RemoteImage.swift */; };
 		6A3C946E2C1621220082BF8F /* URLSession+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A3C946D2C1621220082BF8F /* URLSession+.swift */; };
 		6A3C94702C1621310082BF8F /* URLRequest+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A3C946F2C1621310082BF8F /* URLRequest+.swift */; };
 		6A49968D2C1418B300E2A92A /* RecipeDetailsHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A49968C2C1418B300E2A92A /* RecipeDetailsHeaderView.swift */; };
@@ -77,6 +79,8 @@
 /* Begin PBXFileReference section */
 		6A395DCB2C192FCE00FE2D77 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		6A395DCF2C1942BF00FE2D77 /* String+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
+		6A395DD12C19488D00FE2D77 /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
+		6A395DD32C1948AF00FE2D77 /* RemoteImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteImage.swift; sourceTree = "<group>"; };
 		6A3C946D2C1621220082BF8F /* URLSession+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "URLSession+.swift"; sourceTree = "<group>"; };
 		6A3C946F2C1621310082BF8F /* URLRequest+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "URLRequest+.swift"; sourceTree = "<group>"; };
 		6A49968C2C1418B300E2A92A /* RecipeDetailsHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailsHeaderView.swift; sourceTree = "<group>"; };
@@ -244,6 +248,8 @@
 			isa = PBXGroup;
 			children = (
 				6A7D8CCB2C138F81001764B9 /* MealService.swift */,
+				6A7D8CBD2C138C6A001764B9 /* Endpoints */,
+				6AD288CE2C18CB68003A8F40 /* Network */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -252,6 +258,8 @@
 			isa = PBXGroup;
 			children = (
 				6A7D8CDC2C13B6E6001764B9 /* ImageCache.swift */,
+				6A395DD12C19488D00FE2D77 /* ImageLoader.swift */,
+				6A395DD32C1948AF00FE2D77 /* RemoteImage.swift */,
 			);
 			path = Cache;
 			sourceTree = "<group>";
@@ -362,8 +370,6 @@
 				6AD430682C0F8080008BD892 /* CuisineApp.swift */,
 				6A7D8CC42C138D91001764B9 /* Main */,
 				6A7D8CCA2C138F5A001764B9 /* Services */,
-				6A7D8CBD2C138C6A001764B9 /* Endpoints */,
-				6AD288CE2C18CB68003A8F40 /* Network */,
 				6A7D8CBA2C138C2F001764B9 /* Models */,
 				6A7D8CDB2C13B691001764B9 /* Cache */,
 				6A8FFECD2C13CBCB00197258 /* Error Handling */,
@@ -548,6 +554,7 @@
 				6A8FFECF2C13CC0D00197258 /* MealError.swift in Sources */,
 				6A395DD02C1942C200FE2D77 /* String+.swift in Sources */,
 				6A7D8CD22C139B25001764B9 /* SkeletonMealsView.swift in Sources */,
+				6A395DD22C19489200FE2D77 /* ImageLoader.swift in Sources */,
 				6A60E21C2C13D68700194166 /* RecipeDetailsView.swift in Sources */,
 				6A49968D2C1418B300E2A92A /* RecipeDetailsHeaderView.swift in Sources */,
 				6AD4306B2C0F8080008BD892 /* MainView.swift in Sources */,
@@ -559,6 +566,7 @@
 				6A3C94702C1621310082BF8F /* URLRequest+.swift in Sources */,
 				6A3C946E2C1621220082BF8F /* URLSession+.swift in Sources */,
 				6A7D8CD82C13A1F2001764B9 /* RecipeView.swift in Sources */,
+				6A395DD42C1948B100FE2D77 /* RemoteImage.swift in Sources */,
 				6A7D8CD42C13A08B001764B9 /* MealCategoryView.swift in Sources */,
 				6A60E21E2C13E8D300194166 /* MealDetailsResponse.swift in Sources */,
 				6A7D8CCE2C1391C5001764B9 /* MealsResponse.swift in Sources */,

@@ -41,8 +41,23 @@ class Network: NetworkProtocol {
         // Starting network session and getting a response
         let (data, response) = try await urlSession.data(for: .cuisineRequest(url))
         // Ensuring we have a valid response
-        guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
-            throw URLError(.badServerResponse)
+        guard let httpResponse = response as? HTTPURLResponse else { throw URLError(.badServerResponse) }
+       
+        // This would be seperated out with the corresponding server side errors
+        // These codes are generic codes most commonly used
+        guard httpResponse.statusCode == 200 else {
+            switch httpResponse.statusCode {
+            case 100..<200:
+                throw URLError(.unknown)
+            case 300..<400:
+                throw URLError(.redirectToNonExistentLocation)
+            case 400..<500:
+                throw URLError(.fileDoesNotExist)
+            case 500..<600:
+                throw URLError(.badServerResponse)
+            default:
+                throw URLError(.unknown)
+            }
         }
         // Returning decoded data
         return try cuisineDecoder.decode(T.self, from: data)
