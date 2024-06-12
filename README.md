@@ -50,14 +50,19 @@
 
 ### Testing
 > Unit Tests
+- `CuisineLocalizationTests`
+  - All locales exist
+  - English localization
+  - Swedish localization
+    
 - `CuisineNetworkTests`
   - Success
-  - Server Fail
-  - JSON Fail
+  - Server fail
+  - JSON fail
        
 - `CuisineMainTests`
   - Filter
-  - Correct Initialization
+  - Correct initialization
     
 > UI Tests
 - `CuisineUITests`
