@@ -61,6 +61,7 @@
     
 > UI Tests
 - `CuisineUITests`
+  
   - Dessert card exists
   - Dessert category exists
   - Filter alphabetical button exists
