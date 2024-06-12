@@ -44,6 +44,10 @@
 - All images are cached
 - All Urls are cached
 
+### Localization 
+- English
+- Swedish
+
 ### Testing
 - Unit Tests
   - Network
