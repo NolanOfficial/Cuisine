@@ -92,7 +92,7 @@ final class CuisineNetworkTests: XCTestCase {
         let expectation = expectation(description: "Incorrect JSON Format Error")
         
         do {
-            let data: MealsResponse = try await network.fetch(url)
+            let _: MealsResponse = try await network.fetch(url)
             XCTFail("The test should throw an unable to decode error.")
             expectation.fulfill()
         } catch let error as DecodingError {
@@ -125,7 +125,7 @@ final class CuisineNetworkTests: XCTestCase {
         let expectation = expectation(description: "Incorrect JSON Format Error")
         
         do {
-            let data: MealsResponse = try await network.fetch(url)
+            let _: MealsResponse = try await network.fetch(url)
             XCTFail("The test should throw a status coder / server error.")
             expectation.fulfill()
         } catch let error as URLError {

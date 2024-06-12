@@ -16,7 +16,7 @@ struct MealCategoryView: View {
             Text("Categories")
                 .font(.headline)
             
-            Text(viewModel.selectedCategory.rawValue.capitalized)
+            Text(viewModel.selectedCategory.rawValue.capitalized.localized)
                 .roundedRectBackground()
         }
         .listRowSeparator(.hidden)
@@ -37,7 +37,7 @@ struct MealCategoryView: View {
                                 .frame(width: 35, height: 35)
                                 .padding(6)
                             
-                            Text(cuisine.rawValue.capitalized)
+                            Text(cuisine.rawValue.capitalized.localized)
                                 .font(.footnote)
                         }
                         .foregroundStyle(viewModel.selectedCategory == cuisine ? .orange : .primary)

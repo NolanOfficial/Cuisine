@@ -18,7 +18,7 @@ struct MealFilterButton: View {
                     viewModel.mealFilter = filter
                 } label: {
                     HStack {
-                        Text(filter.rawValue.capitalized)
+                        Text(LocalizedStringKey(filter.rawValue.capitalized))
                         Spacer()
                         if viewModel.mealFilter == filter {
                             Image(systemName: "arrow.down")

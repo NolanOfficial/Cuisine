@@ -77,7 +77,7 @@ struct MealDetail: Identifiable, Decodable {
         
         func addToIngredientsMap(_ ingredient: String?, _ measurement: String?) {
             if let ingredient, !ingredient.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty, let measurement, !measurement.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
-                ingredientsMap[ingredient] = measurement
+                ingredientsMap[ingredient] = measurement.trimmingCharacters(in: .whitespacesAndNewlines)
             }
         }
         
@@ -101,7 +101,7 @@ struct MealDetail: Identifiable, Decodable {
         addToIngredientsMap(ingredientEighteen, measureEighteen)
         addToIngredientsMap(ingredientNineteen, measureNineteen)
         addToIngredientsMap(ingredientTwenty, measureTwenty)
-        
+
         return ingredientsMap
     }
     

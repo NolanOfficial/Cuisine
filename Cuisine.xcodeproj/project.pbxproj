@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6A395DCC2C192FCE00FE2D77 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 6A395DCB2C192FCE00FE2D77 /* Localizable.xcstrings */; };
+		6A395DD02C1942C200FE2D77 /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A395DCF2C1942BF00FE2D77 /* String+.swift */; };
 		6A3C946E2C1621220082BF8F /* URLSession+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A3C946D2C1621220082BF8F /* URLSession+.swift */; };
 		6A3C94702C1621310082BF8F /* URLRequest+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A3C946F2C1621310082BF8F /* URLRequest+.swift */; };
 		6A49968D2C1418B300E2A92A /* RecipeDetailsHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A49968C2C1418B300E2A92A /* RecipeDetailsHeaderView.swift */; };
@@ -73,6 +75,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6A395DCB2C192FCE00FE2D77 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
+		6A395DCF2C1942BF00FE2D77 /* String+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
 		6A3C946D2C1621220082BF8F /* URLSession+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "URLSession+.swift"; sourceTree = "<group>"; };
 		6A3C946F2C1621310082BF8F /* URLRequest+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "URLRequest+.swift"; sourceTree = "<group>"; };
 		6A49968C2C1418B300E2A92A /* RecipeDetailsHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailsHeaderView.swift; sourceTree = "<group>"; };
@@ -210,6 +214,7 @@
 		6A7D8CC02C138CEC001764B9 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				6A395DCF2C1942BF00FE2D77 /* String+.swift */,
 				6A7D8CC12C138CF8001764B9 /* EdgeInsets+.swift */,
 				6A3C946F2C1621310082BF8F /* URLRequest+.swift */,
 				6A3C946D2C1621220082BF8F /* URLSession+.swift */,
@@ -323,6 +328,14 @@
 			path = "Main Tests";
 			sourceTree = "<group>";
 		};
+		6AD288E02C192DBA003A8F40 /* Localization */ = {
+			isa = PBXGroup;
+			children = (
+				6A395DCB2C192FCE00FE2D77 /* Localizable.xcstrings */,
+			);
+			path = Localization;
+			sourceTree = "<group>";
+		};
 		6AD4305C2C0F8080008BD892 = {
 			isa = PBXGroup;
 			children = (
@@ -355,6 +368,7 @@
 				6A7D8CDB2C13B691001764B9 /* Cache */,
 				6A8FFECD2C13CBCB00197258 /* Error Handling */,
 				6A60E2162C13D21800194166 /* View Modifiers */,
+				6AD288E02C192DBA003A8F40 /* Localization */,
 				6A7D8CC02C138CEC001764B9 /* Extensions */,
 				6AD4306C2C0F8081008BD892 /* Assets.xcassets */,
 				6AD4306E2C0F8081008BD892 /* Preview Content */,
@@ -474,6 +488,7 @@
 			knownRegions = (
 				en,
 				Base,
+				sv,
 			);
 			mainGroup = 6AD4305C2C0F8080008BD892;
 			productRefGroup = 6AD430662C0F8080008BD892 /* Products */;
@@ -494,6 +509,7 @@
 			files = (
 				6AD430702C0F8081008BD892 /* Preview Assets.xcassets in Resources */,
 				6AD4306D2C0F8081008BD892 /* Assets.xcassets in Resources */,
+				6A395DCC2C192FCE00FE2D77 /* Localizable.xcstrings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -530,6 +546,7 @@
 				6A4996932C141CD800E2A92A /* RecipeDetailsInstructionsView.swift in Sources */,
 				6AD288D02C18CB7E003A8F40 /* Network.swift in Sources */,
 				6A8FFECF2C13CC0D00197258 /* MealError.swift in Sources */,
+				6A395DD02C1942C200FE2D77 /* String+.swift in Sources */,
 				6A7D8CD22C139B25001764B9 /* SkeletonMealsView.swift in Sources */,
 				6A60E21C2C13D68700194166 /* RecipeDetailsView.swift in Sources */,
 				6A49968D2C1418B300E2A92A /* RecipeDetailsHeaderView.swift in Sources */,
@@ -654,6 +671,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -710,6 +728,7 @@
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;

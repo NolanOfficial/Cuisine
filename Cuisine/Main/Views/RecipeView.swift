@@ -25,7 +25,7 @@ struct RecipeView: View {
             VStack(alignment: .leading) {
                 Text(meal.name)
                     .font(.subheadline.weight(.semibold))
-                Text("ID: \(meal.id)")
+                Text("Id: \(meal.id)")
                     .font(.footnote)
                     .foregroundStyle(.secondary)
             }

@@ -20,7 +20,7 @@ struct RecipeDetailsAboutView: View {
                     Image(systemName: aboutEnum.imageName)
                         .imageScale(.large)
                     
-                    Text(about.capitalized)
+                    Text(about.capitalized.localized)
                         .font(.subheadline)
                     
                     Spacer()
@@ -33,7 +33,7 @@ struct RecipeDetailsAboutView: View {
                             }
                         }
                     } else {
-                        Text(detail)
+                        Text(detail.localized)
                             .roundedRectBackground()
                     }
                 }
