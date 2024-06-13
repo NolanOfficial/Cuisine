@@ -33,7 +33,6 @@ class RecipeDetailsViewModel: ObservableObject {
     @MainActor
     func getMealDetail(for meal: Meal) async {
         do {
-            state = .loading
             mealDetail = try await mealService.getMealDetails(for: meal)
             state = .result
         } catch let error as MealError {

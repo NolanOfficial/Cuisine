@@ -38,7 +38,6 @@ class MainViewModel: ObservableObject {
     @MainActor
     func getMeals() async {
         do {
-            state = .loading
             meals = try await mealService.getMeals(for: selectedCategory)
             mealsSearchResults = meals
             filterMeals()
