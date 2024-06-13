@@ -27,23 +27,16 @@ final class CuisineLocalizationTests: XCTestCase {
     func test_English_Localization() {
         
         let languageCode = "en"
-        let currentLocale = NSLocale.current
-        guard let languageIdentifier = Locale(identifier: languageCode).identifier as String? else {
-            XCTFail("Could not set locale to Swedish")
-            return
-        }
         
-        // Load the English localization bundle
         guard let bundlePath = Bundle.main.path(forResource: languageCode, ofType: "lproj") else {
             XCTFail("Could not load the localization bundle")
             return
         }
         guard let testBundle = Bundle(path: bundlePath) else {
-            XCTFail("Could not load the Swedish localization bundle")
+            XCTFail("Could not load the English localization bundle")
             return
         }
         
-        // Test specific localized strings
         verifyLocalization(key: recipe, expected: "Recipe", bundle: testBundle)
         verifyLocalization(key: dessert, expected: "Dessert", bundle: testBundle)
         verifyLocalization(key: instructions, expected: "Instructions", bundle: testBundle)
@@ -52,15 +45,8 @@ final class CuisineLocalizationTests: XCTestCase {
     /// Tests base words for swedish localization
     func test_Swedish_Localization() {
         
-        // Set the locale to Swedish
         let languageCode = "sv"
-        let currentLocale = NSLocale.current
-        guard let languageIdentifier = Locale(identifier: languageCode).identifier as String? else {
-            XCTFail("Could not set locale to Swedish")
-            return
-        }
         
-        // Load the Swedish localization bundle
         guard let bundlePath = Bundle.main.path(forResource: languageCode, ofType: "lproj") else {
             XCTFail("Could not load the localization bundle")
             return
@@ -70,7 +56,6 @@ final class CuisineLocalizationTests: XCTestCase {
             return
         }
         
-        // Test specific localized strings
         verifyLocalization(key: recipe, expected: "Recept", bundle: testBundle)
         verifyLocalization(key: dessert, expected: "Öken", bundle: testBundle)
         verifyLocalization(key: instructions, expected: "Instruktioner", bundle: testBundle)

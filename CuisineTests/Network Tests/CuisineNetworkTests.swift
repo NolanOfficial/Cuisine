@@ -103,7 +103,7 @@ final class CuisineNetworkTests: XCTestCase {
         guard let url = FetchAPI.meal(category: .dessert).url else { throw URLError(.badURL) }
         
         guard let response = HTTPURLResponse(url: url,
-                                             statusCode: 404,
+                                             statusCode: 504,
                                              httpVersion: nil,
                                              headerFields: ["Content-Type": "application/json"]) else { throw URLError(.badServerResponse) }
         
@@ -120,6 +120,9 @@ final class CuisineNetworkTests: XCTestCase {
             expectation.fulfill()
         } catch let error as URLError {
             if error == URLError(.badServerResponse) {
+                expectation.fulfill()
+            } else {
+                XCTFail("The test should throw a status coder / server error.")
                 expectation.fulfill()
             }
         } catch {
