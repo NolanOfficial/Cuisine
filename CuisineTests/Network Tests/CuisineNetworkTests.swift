@@ -10,10 +10,8 @@ import XCTest
 
 final class CuisineNetworkTests: XCTestCase {
     
-    /// URL session with no data saving or caching
     var urlSession: URLSession!
     
-    /// Network
     var network: NetworkProtocol!
     
     override func setUp() {
@@ -26,10 +24,8 @@ final class CuisineNetworkTests: XCTestCase {
     /// Tests the the success of the network fetch method
     func test_Fetch_Meals_Success() async throws {
         
-        // Fetching meal url from category
         guard let url = FetchAPI.meal(category: .dessert).url else { throw URLError(.badURL) }
         
-        // Creating a mock response from the url
         guard let response = HTTPURLResponse(url: url,
                                              statusCode: 200,
                                              httpVersion: nil,
@@ -50,10 +46,8 @@ final class CuisineNetworkTests: XCTestCase {
     /// Tests the the success of the network fetch method
     func test_Fetch_Meal_Details_Success() async throws {
         
-        // Fetching meal url from category
         guard let url = FetchAPI.mealDetails(meal: Meal.MOCK_MEAL).url else { throw URLError(.badURL) }
         
-        // Creating a mock response from the url
         guard let response = HTTPURLResponse(url: url,
                                              statusCode: 200,
                                              httpVersion: nil,
@@ -75,10 +69,8 @@ final class CuisineNetworkTests: XCTestCase {
     /// Tests the the json failure of the network fetch method
     func test_Fetch_Data_Fail() async throws {
         
-        // Fetching meal url from category
         guard let url = FetchAPI.meal(category: .dessert).url else { throw URLError(.badURL) }
         
-        // Creating a mock response from the url
         guard let response = HTTPURLResponse(url: url,
                                              statusCode: 200,
                                              httpVersion: nil,
@@ -108,12 +100,10 @@ final class CuisineNetworkTests: XCTestCase {
     /// Tests the the json failure of the network fetch method
     func test_Fetch_Server_Fail() async throws {
         
-        // Fetching meal url from category
         guard let url = FetchAPI.meal(category: .dessert).url else { throw URLError(.badURL) }
         
-        // Creating a mock response from the url
         guard let response = HTTPURLResponse(url: url,
-                                             statusCode: 404,
+                                             statusCode: 504,
                                              httpVersion: nil,
                                              headerFields: ["Content-Type": "application/json"]) else { throw URLError(.badServerResponse) }
         
@@ -130,6 +120,9 @@ final class CuisineNetworkTests: XCTestCase {
             expectation.fulfill()
         } catch let error as URLError {
             if error == URLError(.badServerResponse) {
+                expectation.fulfill()
+            } else {
+                XCTFail("The test should throw a status coder / server error.")
                 expectation.fulfill()
             }
         } catch {

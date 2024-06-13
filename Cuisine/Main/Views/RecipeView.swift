@@ -7,21 +7,20 @@
 
 import SwiftUI
 
+/// This view will load the image from cache
+/// If none is available, it will load from the given url
 struct RecipeView: View {
     
     let meal: Meal
     
     var body: some View {
         HStack(spacing: 10) {
-            
-            // Image of the recipe
             RemoteImage(url: meal.thumbnailUrl)
                 .scaledToFill()
                 .frame(width: 120, height: 75)
                 .clipShape(RoundedRectangle(cornerRadius: 10))
                 .environment(\.colorScheme, .dark)
-            
-            // Meal Name and ID
+        
             VStack(alignment: .leading) {
                 Text(meal.name)
                     .font(.subheadline.weight(.semibold))

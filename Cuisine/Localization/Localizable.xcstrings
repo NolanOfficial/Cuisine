@@ -3,6 +3,12 @@
   "strings" : {
     "%@ Recipe Filter" : {
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ Recipe Filter"
+          }
+        },
         "sv" : {
           "stringUnit" : {
             "state" : "translated",
@@ -13,6 +19,12 @@
     },
     "About" : {
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "About"
+          }
+        },
         "sv" : {
           "stringUnit" : {
             "state" : "translated",
@@ -24,6 +36,12 @@
     "Alphabetical" : {
       "extractionState" : "manual",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Alphabetical"
+          }
+        },
         "sv" : {
           "stringUnit" : {
             "state" : "translated",
@@ -35,6 +53,12 @@
     "American" : {
       "extractionState" : "manual",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "American"
+          }
+        },
         "sv" : {
           "stringUnit" : {
             "state" : "translated",
@@ -46,6 +70,12 @@
     "Beef" : {
       "extractionState" : "manual",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Beef"
+          }
+        },
         "sv" : {
           "stringUnit" : {
             "state" : "translated",
@@ -57,6 +87,12 @@
     "Breakfast" : {
       "extractionState" : "manual",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Breakfast"
+          }
+        },
         "sv" : {
           "stringUnit" : {
             "state" : "translated",
@@ -68,6 +104,12 @@
     "British" : {
       "extractionState" : "manual",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "British"
+          }
+        },
         "sv" : {
           "stringUnit" : {
             "state" : "translated",
@@ -79,6 +121,12 @@
     "Canadian" : {
       "extractionState" : "manual",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Canadian"
+          }
+        },
         "sv" : {
           "stringUnit" : {
             "state" : "translated",
@@ -89,6 +137,12 @@
     },
     "Categories" : {
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Categories"
+          }
+        },
         "sv" : {
           "stringUnit" : {
             "state" : "translated",
@@ -100,6 +154,12 @@
     "Category" : {
       "extractionState" : "manual",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Category"
+          }
+        },
         "sv" : {
           "stringUnit" : {
             "state" : "translated",
@@ -111,6 +171,12 @@
     "Chicken" : {
       "extractionState" : "manual",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Chicken"
+          }
+        },
         "sv" : {
           "stringUnit" : {
             "state" : "translated",
@@ -122,6 +188,12 @@
     "Chinese" : {
       "extractionState" : "manual",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Chinese"
+          }
+        },
         "sv" : {
           "stringUnit" : {
             "state" : "translated",
@@ -133,6 +205,12 @@
     "Croatian" : {
       "extractionState" : "manual",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Croatian"
+          }
+        },
         "sv" : {
           "stringUnit" : {
             "state" : "translated",
@@ -143,6 +221,12 @@
     },
     "Cuisine" : {
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cuisine"
+          }
+        },
         "sv" : {
           "stringUnit" : {
             "state" : "translated",
@@ -154,6 +238,12 @@
     "Dessert" : {
       "extractionState" : "manual",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dessert"
+          }
+        },
         "sv" : {
           "stringUnit" : {
             "state" : "translated",
@@ -165,6 +255,12 @@
     "Dutch" : {
       "extractionState" : "manual",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dutch"
+          }
+        },
         "sv" : {
           "stringUnit" : {
             "state" : "translated",
@@ -176,6 +272,12 @@
     "Egyptian" : {
       "extractionState" : "manual",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Egyptian"
+          }
+        },
         "sv" : {
           "stringUnit" : {
             "state" : "translated",
@@ -187,6 +289,12 @@
     "Filipino" : {
       "extractionState" : "manual",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Filipino"
+          }
+        },
         "sv" : {
           "stringUnit" : {
             "state" : "translated",
@@ -198,6 +306,12 @@
     "French" : {
       "extractionState" : "manual",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "French"
+          }
+        },
         "sv" : {
           "stringUnit" : {
             "state" : "translated",
@@ -209,6 +323,12 @@
     "German" : {
       "extractionState" : "manual",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "German"
+          }
+        },
         "sv" : {
           "stringUnit" : {
             "state" : "translated",
@@ -220,6 +340,12 @@
     "Goat" : {
       "extractionState" : "manual",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Goat"
+          }
+        },
         "sv" : {
           "stringUnit" : {
             "state" : "translated",
@@ -231,6 +357,12 @@
     "Greek" : {
       "extractionState" : "manual",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Greek"
+          }
+        },
         "sv" : {
           "stringUnit" : {
             "state" : "translated",
@@ -241,6 +373,12 @@
     },
     "Id: %@" : {
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Id: %@"
+          }
+        },
         "sv" : {
           "stringUnit" : {
             "state" : "translated",
@@ -252,6 +390,12 @@
     "Indian" : {
       "extractionState" : "manual",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Indian"
+          }
+        },
         "sv" : {
           "stringUnit" : {
             "state" : "translated",
@@ -262,6 +406,12 @@
     },
     "Ingredients" : {
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ingredients"
+          }
+        },
         "sv" : {
           "stringUnit" : {
             "state" : "translated",
@@ -272,6 +422,12 @@
     },
     "Instructions" : {
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Instructions"
+          }
+        },
         "sv" : {
           "stringUnit" : {
             "state" : "translated",
@@ -283,6 +439,12 @@
     "Irish" : {
       "extractionState" : "manual",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Irish"
+          }
+        },
         "sv" : {
           "stringUnit" : {
             "state" : "translated",
@@ -294,6 +456,12 @@
     "Italian" : {
       "extractionState" : "manual",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Italian"
+          }
+        },
         "sv" : {
           "stringUnit" : {
             "state" : "translated",
@@ -305,6 +473,12 @@
     "Jamaican" : {
       "extractionState" : "manual",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jamaican"
+          }
+        },
         "sv" : {
           "stringUnit" : {
             "state" : "translated",
@@ -316,6 +490,12 @@
     "Japanese" : {
       "extractionState" : "manual",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Japanese"
+          }
+        },
         "sv" : {
           "stringUnit" : {
             "state" : "translated",
@@ -327,6 +507,12 @@
     "Kenyan" : {
       "extractionState" : "manual",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kenyan"
+          }
+        },
         "sv" : {
           "stringUnit" : {
             "state" : "translated",
@@ -338,6 +524,12 @@
     "Lamb" : {
       "extractionState" : "manual",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lamb"
+          }
+        },
         "sv" : {
           "stringUnit" : {
             "state" : "translated",
@@ -348,6 +540,12 @@
     },
     "Lorem Impsum" : {
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lorem Impsum"
+          }
+        },
         "sv" : {
           "stringUnit" : {
             "state" : "translated",
@@ -358,6 +556,12 @@
     },
     "Lorem ipsum" : {
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lorem ipsum"
+          }
+        },
         "sv" : {
           "stringUnit" : {
             "state" : "translated",
@@ -368,6 +572,12 @@
     },
     "Lorem Ipsum" : {
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lorem Ipsum"
+          }
+        },
         "sv" : {
           "stringUnit" : {
             "state" : "translated",
@@ -378,6 +588,12 @@
     },
     "Lorem ipsum dolor sit" : {
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lorem ipsum dolor sit"
+          }
+        },
         "sv" : {
           "stringUnit" : {
             "state" : "translated",
@@ -389,6 +605,12 @@
     "Malaysian" : {
       "extractionState" : "manual",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Malaysian"
+          }
+        },
         "sv" : {
           "stringUnit" : {
             "state" : "translated",
@@ -400,6 +622,12 @@
     "Mexican" : {
       "extractionState" : "manual",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mexican"
+          }
+        },
         "sv" : {
           "stringUnit" : {
             "state" : "translated",
@@ -411,6 +639,12 @@
     "Miscellaneous" : {
       "extractionState" : "manual",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Miscellaneous"
+          }
+        },
         "sv" : {
           "stringUnit" : {
             "state" : "translated",
@@ -421,6 +655,12 @@
     },
     "No Recipes Found" : {
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No Recipes Found"
+          }
+        },
         "sv" : {
           "stringUnit" : {
             "state" : "translated",
@@ -431,6 +671,12 @@
     },
     "No recipes were found. Try another category." : {
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No recipes were found. Try another category."
+          }
+        },
         "sv" : {
           "stringUnit" : {
             "state" : "translated",
@@ -441,6 +687,12 @@
     },
     "Ok" : {
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ok"
+          }
+        },
         "sv" : {
           "stringUnit" : {
             "state" : "translated",
@@ -452,6 +704,12 @@
     "Origin" : {
       "extractionState" : "manual",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Origin"
+          }
+        },
         "sv" : {
           "stringUnit" : {
             "state" : "translated",
@@ -463,6 +721,12 @@
     "Pasta" : {
       "extractionState" : "manual",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pasta"
+          }
+        },
         "sv" : {
           "stringUnit" : {
             "state" : "translated",
@@ -474,6 +738,12 @@
     "Polish" : {
       "extractionState" : "manual",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Polish"
+          }
+        },
         "sv" : {
           "stringUnit" : {
             "state" : "translated",
@@ -485,6 +755,12 @@
     "Pork" : {
       "extractionState" : "manual",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pork"
+          }
+        },
         "sv" : {
           "stringUnit" : {
             "state" : "translated",
@@ -496,6 +772,12 @@
     "Portuguese" : {
       "extractionState" : "manual",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Portuguese"
+          }
+        },
         "sv" : {
           "stringUnit" : {
             "state" : "translated",
@@ -506,6 +788,12 @@
     },
     "Recipe" : {
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Recipe"
+          }
+        },
         "sv" : {
           "stringUnit" : {
             "state" : "translated",
@@ -516,6 +804,12 @@
     },
     "Recipe Details Error" : {
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Recipe Details Error"
+          }
+        },
         "sv" : {
           "stringUnit" : {
             "state" : "translated",
@@ -526,6 +820,12 @@
     },
     "Recipe Filter Menu" : {
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Recipe Filter Menu"
+          }
+        },
         "sv" : {
           "stringUnit" : {
             "state" : "translated",
@@ -536,6 +836,12 @@
     },
     "Recipes" : {
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Recipes"
+          }
+        },
         "sv" : {
           "stringUnit" : {
             "state" : "translated",
@@ -547,6 +853,12 @@
     "Russian" : {
       "extractionState" : "manual",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Russian"
+          }
+        },
         "sv" : {
           "stringUnit" : {
             "state" : "translated",
@@ -558,6 +870,12 @@
     "Seafood" : {
       "extractionState" : "manual",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Seafood"
+          }
+        },
         "sv" : {
           "stringUnit" : {
             "state" : "translated",
@@ -569,6 +887,12 @@
     "Side" : {
       "extractionState" : "manual",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Side"
+          }
+        },
         "sv" : {
           "stringUnit" : {
             "state" : "translated",
@@ -580,6 +904,12 @@
     "Spanish" : {
       "extractionState" : "manual",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Spanish"
+          }
+        },
         "sv" : {
           "stringUnit" : {
             "state" : "translated",
@@ -591,6 +921,12 @@
     "Starter" : {
       "extractionState" : "manual",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Starter"
+          }
+        },
         "sv" : {
           "stringUnit" : {
             "state" : "translated",
@@ -601,6 +937,12 @@
     },
     "Tags" : {
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tags"
+          }
+        },
         "sv" : {
           "stringUnit" : {
             "state" : "translated",
@@ -612,6 +954,12 @@
     "Thai" : {
       "extractionState" : "manual",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Thai"
+          }
+        },
         "sv" : {
           "stringUnit" : {
             "state" : "translated",
@@ -623,6 +971,12 @@
     "Turkish" : {
       "extractionState" : "manual",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Turkish"
+          }
+        },
         "sv" : {
           "stringUnit" : {
             "state" : "translated",
@@ -633,6 +987,12 @@
     },
     "Unable to load recipe. Please try again." : {
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Unable to load recipe. Please try again."
+          }
+        },
         "sv" : {
           "stringUnit" : {
             "state" : "translated",
@@ -644,6 +1004,12 @@
     "Unknown" : {
       "extractionState" : "manual",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Unknown"
+          }
+        },
         "sv" : {
           "stringUnit" : {
             "state" : "translated",
@@ -655,6 +1021,12 @@
     "Vegan" : {
       "extractionState" : "manual",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vegan"
+          }
+        },
         "sv" : {
           "stringUnit" : {
             "state" : "translated",
@@ -666,6 +1038,12 @@
     "Vegetarian" : {
       "extractionState" : "manual",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vegetarian"
+          }
+        },
         "sv" : {
           "stringUnit" : {
             "state" : "translated",
@@ -676,6 +1054,12 @@
     },
     "Website" : {
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Website"
+          }
+        },
         "sv" : {
           "stringUnit" : {
             "state" : "translated",
@@ -686,6 +1070,12 @@
     },
     "YouTube" : {
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "YouTube"
+          }
+        },
         "sv" : {
           "stringUnit" : {
             "state" : "translated",

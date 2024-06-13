@@ -11,22 +11,17 @@ class RecipeDetailsViewModel: ObservableObject {
     
     // MARK: Services
     
-    /// Meal API service
     private let mealService = MealService()
     
     // MARK: Published values
     
-    /// Boolean indicating the state of the view
     @Published var state: LoadingState = .loading
 
-    /// The details of a meal
     @Published var mealDetail: MealDetail?
     
-    /// Meal error if thrown
-    @Published var error: MealError?
+    @Published var mealError: MealError?
     
-    /// Boolean indicating wether to show the meal error
-    @Published var showError = false
+    @Published var showMealError = false
     
     // MARK: Functions
     
@@ -38,20 +33,15 @@ class RecipeDetailsViewModel: ObservableObject {
     @MainActor
     func getMealDetail(for meal: Meal) async {
         do {
-            state = .loading
             mealDetail = try await mealService.getMealDetails(for: meal)
             state = .result
         } catch let error as MealError {
-            // Setting custom error
-            self.error = error
-            showError = true
-            // Set error view state
+            mealError = error
+            showMealError = true
             state = .error
         } catch {
-            // Setting generic error
-            self.error = MealError.unknown
-            showError = true
-            // Set error view state
+            mealError = MealError.unknown
+            showMealError = true
             state = .error
         }
     }

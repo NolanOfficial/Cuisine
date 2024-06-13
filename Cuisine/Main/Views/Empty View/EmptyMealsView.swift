@@ -7,23 +7,19 @@
 
 import SwiftUI
 
-// View that represents empty meal list
 struct EmptyMealsView: View {
     
     var body: some View {
-        
         HStack {
             Spacer()
             
             VStack(alignment:.center, spacing: 16) {
-                
                 Image(systemName: "fork.knife.circle.fill")
                     .resizable()
                     .scaledToFit()
                     .frame(width: 50, height: 50)
               
                 VStack(spacing: 6) {
-                    
                     Text("No Recipes Found")
                         .font(.headline)
 

@@ -13,13 +13,10 @@ class ImageLoader: ObservableObject {
     
     private let imageCache = ImageCache()
     
-    /// Optional image to retrieve
     @Published var image: UIImage?
     
-    /// Optional image error thrown
     @Published var imageError: Error?
 
-    /// The URL to get or set
     private var url: URL?
 
     /// Initializes the cache retrieval from the given url

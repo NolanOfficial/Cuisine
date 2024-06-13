@@ -14,7 +14,11 @@ struct SkeletonMealsView: View {
     private let center = (UIScreen.main.bounds.width / 2) + 250
     
     private func skeletonView() -> some View {
-        return VStack(spacing: 22) {
+        return VStack(alignment: .leading, spacing: 22) {
+            
+            Text("Recipes")
+                .sectionTitle()
+           
             ForEach(0..<5) { _ in
                 HStack(spacing: 10) {
                    
@@ -31,7 +35,8 @@ struct SkeletonMealsView: View {
                     } 
                 }
             }
-        }.redacted(reason: .placeholder)
+        }
+        .redacted(reason: .placeholder)
     }
     
     var body: some View {

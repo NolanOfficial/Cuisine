@@ -105,7 +105,6 @@ struct MealDetail: Identifiable, Decodable {
         return ingredientsMap
     }
     
-    // Combining different information
     var aboutMap: [String:String] {
         
         var aboutMap: [String:String] = [:]
@@ -196,7 +195,6 @@ struct MealDetail: Identifiable, Decodable {
     }
 }
 
-// Mock Detail
 extension MealDetail {
  
     static var MOCK_MEAL_DETAIL: MealDetail {
