@@ -26,7 +26,7 @@ final class CuisineTests: XCTestCase {
     @MainActor
     func test_Meal_Filter() async throws {
         
-        viewModel.meals = Meal.MOCK_MEALS
+        viewModel.mealsSearchResults = Meal.MOCK_MEALS
         
         for filter in MealFilter.allCases {
             var sortedMeals = Meal.MOCK_MEALS
@@ -40,7 +40,7 @@ final class CuisineTests: XCTestCase {
             }
             
             viewModel.filterMeals()
-            XCTAssertEqual(sortedMeals, viewModel.meals)
+            XCTAssertEqual(sortedMeals, viewModel.mealsSearchResults)
         }
     }
 
