@@ -12,10 +12,8 @@ struct RecipeDetailsHeaderView: View {
     let meal: Meal
     
     var body: some View {
- 
         Text(meal.name)
                 .font(.system(size: 28, weight: .medium))
-      
         HStack {
             Spacer()
             RemoteImage(url: meal.thumbnailUrl)

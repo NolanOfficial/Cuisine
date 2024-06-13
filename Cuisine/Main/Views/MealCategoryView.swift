@@ -14,12 +14,11 @@ struct MealCategoryView: View {
     var body: some View {
         HStack {
             Text("Categories")
-                .font(.headline)
             
             Text(category.rawValue.capitalized.localized)
                 .roundedRectBackground()
         }
-        .listRowSeparator(.hidden)
+        .sectionTitle()
         
         // ScrollView since we have a known small set number of items
         ScrollView(.horizontal, showsIndicators: false) {
@@ -54,6 +53,5 @@ struct MealCategoryView: View {
 }
 
 #Preview {
-    @State var category: MealCategory = .dessert
-    MealCategoryView(category: $category)
+    MealCategoryView(category: .constant(.breakfast))
 }

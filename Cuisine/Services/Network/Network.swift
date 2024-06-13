@@ -7,7 +7,6 @@
 
 import Foundation
 
-/// Network protocol
 protocol NetworkProtocol {
     func fetch<T: Decodable>(_ url: URL) async throws -> T
 }
@@ -38,9 +37,9 @@ class Network: NetworkProtocol {
     ///
     /// - Returns: The decoded data
     func fetch<T: Decodable>(_ url: URL) async throws -> T {
-        // Starting network session and getting a response
+        
         let (data, response) = try await urlSession.data(for: .cuisineRequest(url))
-        // Ensuring we have a valid response
+        
         guard let httpResponse = response as? HTTPURLResponse else { throw URLError(.badServerResponse) }
        
         // This would be seperated out with the corresponding server side errors
@@ -59,7 +58,6 @@ class Network: NetworkProtocol {
                 throw URLError(.unknown)
             }
         }
-        // Returning decoded data
         return try cuisineDecoder.decode(T.self, from: data)
     }
 }

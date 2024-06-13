@@ -19,18 +19,14 @@ struct RecipeDetailsView: View {
         // Animation masking works better for a list
         List {
             
-            // Header
             Section {
                 RecipeDetailsHeaderView(meal: meal)
                     .listRowSeparator(.hidden)
                     .listSectionSeparator(.hidden)
             }
             
-            // Switching over the different view state models
             switch viewModel.state {
-                
             case .loading:
-                // Skeleton Loading View
                 Section {
                     SkeletonDetailsView()
                         .listSectionSeparator(.hidden)
@@ -39,7 +35,7 @@ struct RecipeDetailsView: View {
                 
             case .result:
                 if let mealDetail = viewModel.mealDetail {
-                    // About
+                    
                     Section {
                         RecipeDetailsAboutView(mealDetail: mealDetail)
                     } header: {
@@ -49,7 +45,6 @@ struct RecipeDetailsView: View {
                     .listSectionSeparator(.hidden)
                     .listRowInsets(.zero)
                     
-                    // Ingredients
                     Section {
                         RecipeDetailsIngredientsView(mealDetail: mealDetail)
                     } header: {
@@ -59,7 +54,6 @@ struct RecipeDetailsView: View {
                     .listSectionSeparator(.hidden)
                     .listRowInsets(.zero)
                     
-                    // Instructions
                     if let instructions = mealDetail.instructions {
                         Section {
                             RecipeDetailsInstructionsView(instructions: instructions)
@@ -71,7 +65,6 @@ struct RecipeDetailsView: View {
                         .listRowInsets(.zero)
                     }
                     
-                    // Tags
                     if let tags = mealDetail.tags {
                         Section {
                             RecipeDetailsTagsView(tags: tags)
@@ -85,7 +78,6 @@ struct RecipeDetailsView: View {
                 }
                 
             case .empty, .error:
-                // Error View
                 Section {
                     EmptyDetailsView()
                         .listRowSeparator(.hidden)
@@ -96,18 +88,16 @@ struct RecipeDetailsView: View {
         .navigationTitle("Recipe")
         .navigationBarTitleDisplayMode(.inline)
         
-        // Initializing
         .task {
             await viewModel.getMealDetail(for: meal)
         }
         
-        // Error handling alerts
-        .alert(viewModel.error?.title ?? MealError.unknown.title, isPresented: $viewModel.showError) {
+        .alert(viewModel.mealError?.title ?? MealError.unknown.title, isPresented: $viewModel.showMealError) {
             Button("Ok") {
-                viewModel.error = nil
+                viewModel.mealError = nil
             }
         } message: {
-            Text(viewModel.error?.message ?? MealError.unknown.message)
+            Text(viewModel.mealError?.message ?? MealError.unknown.message)
         }
     }
 }

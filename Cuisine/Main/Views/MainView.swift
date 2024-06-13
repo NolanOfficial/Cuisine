@@ -9,10 +9,8 @@ import SwiftUI
 
 struct MainView: View {
     
-    // View Model
     @StateObject private var viewModel = MainViewModel()
     
-    // Search text for recipes
     @State private var searchText = ""
     
     var body: some View {
@@ -24,29 +22,18 @@ struct MainView: View {
             // Note this is only accessible through List, not ScrollView or LazyVStack
             List {
                 
-                // Categories Section
                 Section {
                     MealCategoryView(category: $viewModel.selectedCategory)
                 }
                 
-                // Switching over the different view state models
                 switch viewModel.state {
-                    
                 case .loading:
-                    // Skeleton View (initializing)
                     Section {
                         SkeletonMealsView()
                             .listRowSeparator(.hidden)
-                    } header: {
-                        Text("Recipes")
-                            .listRowInsets(.zero)
-                            .listRowSeparator(.hidden)
-                            .sectionTitle()
-                            .redacted(reason: .placeholder)
                     }
                     
                 case .result:
-                    // Recipe card view
                     Section {
                         ForEach(viewModel.mealsSearchResults) { meal in
                             NavigationLink {
@@ -60,17 +47,13 @@ struct MainView: View {
                     } header: {
                         HStack {
                             Text("Recipes")
-                            
                             Text(viewModel.mealsSearchResults.count, format: .number)
                                 .roundedRectBackground()
                         }
-                        .listRowInsets(.zero)
-                        .listRowSeparator(.hidden)
                         .sectionTitle()
                     }
                     
                 case .empty, .error :
-                    // If no recipes found, show custom empty view
                     Section {
                         EmptyMealsView()
                             .padding(.top)
@@ -78,23 +61,18 @@ struct MainView: View {
                     }
                 }
             }
-            
-            // View modifcations
             .listStyle(.plain)
             .navigationTitle("Cuisine")
             .searchable(text: $searchText, placement: .navigationBarDrawer(displayMode: .always))
             
-            // Toolbar for filter button
             .toolbar {
                 MealFilterButton(mealFilter: $viewModel.mealFilter)
             }
             
-            // Initializing
             .task {
                 await viewModel.getMeals()
             }
-            
-            // Refreshable
+
             .refreshable {
                 await viewModel.getMeals()
             }
@@ -104,19 +82,18 @@ struct MainView: View {
                 viewModel.searchMeals(with: value)
             }
             
-            // Changing meal category
+            // Changing meal category retrieves new meals
             .onChange(of: viewModel.selectedCategory) { value in
                 Task {
                     await viewModel.getMeals()
                 }
             }
             
-            // Sorting the recipes
+            // Sorting the recipes from toolbar filter selection
             .onChange(of: viewModel.mealFilter) { value in
                 viewModel.filterMeals()
             }
             
-            // Error handling alerts
             .alert(viewModel.error?.title ?? MealError.unknown.title, isPresented: $viewModel.showError) {
                 Button("Ok") {
                     viewModel.error = nil

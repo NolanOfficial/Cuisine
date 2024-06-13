@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 63;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -238,6 +238,7 @@
 		6A7D8CC42C138D91001764B9 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				6A7D8CC72C138DC9001764B9 /* View Model */,
 				6A8FFED02C13D12C00197258 /* Views */,
 			);
 			path = Main;
@@ -298,7 +299,6 @@
 		6A8FFED02C13D12C00197258 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				6A7D8CC72C138DC9001764B9 /* View Model */,
 				6AD4306A2C0F8080008BD892 /* MainView.swift */,
 				6A7D8CD32C13A08B001764B9 /* MealCategoryView.swift */,
 				6A7D8CD72C13A1F2001764B9 /* RecipeView.swift */,
@@ -513,7 +513,7 @@
 				};
 			};
 			buildConfigurationList = 6AD430602C0F8080008BD892 /* Build configuration list for PBXProject "Cuisine" */;
-			compatibilityVersion = "Xcode 14.0";
+			compatibilityVersion = "Xcode 15.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (

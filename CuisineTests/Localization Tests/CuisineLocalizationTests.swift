@@ -7,11 +7,9 @@
 
 import XCTest
 @testable import Cuisine
-import SwiftUICore
 
 final class CuisineLocalizationTests: XCTestCase {
     
-    /// All available localized languages
     let localizedLanguages = Bundle.main.localizations
     
     // Localized words to test against
@@ -28,7 +26,6 @@ final class CuisineLocalizationTests: XCTestCase {
     /// Tests base words for english localization
     func test_English_Localization() {
         
-        // Set the locale to Swedish
         let languageCode = "en"
         let currentLocale = NSLocale.current
         guard let languageIdentifier = Locale(identifier: languageCode).identifier as String? else {
@@ -36,12 +33,11 @@ final class CuisineLocalizationTests: XCTestCase {
             return
         }
         
-        // Load the Swedish localization bundle
+        // Load the English localization bundle
         guard let bundlePath = Bundle.main.path(forResource: languageCode, ofType: "lproj") else {
             XCTFail("Could not load the localization bundle")
             return
         }
-        // Create the bundle path
         guard let testBundle = Bundle(path: bundlePath) else {
             XCTFail("Could not load the Swedish localization bundle")
             return
@@ -69,7 +65,6 @@ final class CuisineLocalizationTests: XCTestCase {
             XCTFail("Could not load the localization bundle")
             return
         }
-        // Create the bundle path
         guard let testBundle = Bundle(path: bundlePath) else {
             XCTFail("Could not load the Swedish localization bundle")
             return

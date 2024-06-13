@@ -7,15 +7,12 @@
 
 import Foundation
 
-/// Custom error for the Fetch API
+/// Custom errors for the Fetch API
 enum MealError: Error {
     
-    /// Invalid Url
     case invalidUrl
-    /// Unknown error
     case unknown
     
-    /// The title of the error
     var title: String {
         switch self {
         case .invalidUrl:
@@ -25,7 +22,6 @@ enum MealError: Error {
         }
     }
     
-    /// A description of the error
     var message: String {
         switch self {
         case .invalidUrl:

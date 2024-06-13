@@ -10,17 +10,13 @@ import Foundation
 /// This enum creates different endpoints for the Fetch API in which we can download from
 enum FetchAPI {
     
-    // MARK: Cases
-    
     /// Meal endpoint for a specific category
     case meal(category: MealCategory)
     /// Meal details endpoint for a specific meal
     case mealDetails(meal: Meal)
     
-    // MARK: Paths
-    
     /// The Fetch URL path subcomponent
-    var path: String {
+    private var path: String {
         switch self {
         case .meal:
             return "/api/json/v1/1/filter.php"
@@ -29,10 +25,8 @@ enum FetchAPI {
         }
     }
     
-    // MARK: Query Items
-    
     /// An array of query items for the Fetch URL in the order in which they appear in the original query string
-    var queryItems: [URLQueryItem] {
+    private var queryItems: [URLQueryItem] {
         switch self {
         case .meal(let category):
             return [
@@ -44,8 +38,6 @@ enum FetchAPI {
             ]
         }
     }
-    
-    // MARK: URL
     
     /// A Fetch URL created from the components.
     var url: URL? {
