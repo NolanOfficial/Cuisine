@@ -17,7 +17,7 @@ protocol MealServiceProtocol {
 ///
 /// When managing a lot of different microservices, this is the best (and most common) approach
 /// as it seperates view models from having to manage service requests
-class MealService: MealServiceProtocol {
+actor MealService: MealServiceProtocol {
     
     let network = Network()
 

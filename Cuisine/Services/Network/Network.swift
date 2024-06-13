@@ -12,7 +12,7 @@ protocol NetworkProtocol {
 }
 
 /// Handles all network requests
-class Network: NetworkProtocol {
+actor Network: NetworkProtocol {
     
     /// Custom url session configuration
     private let urlSession: URLSession
