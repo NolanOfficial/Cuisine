@@ -10,10 +10,6 @@ import SwiftUI
 /// View Model that represents the Main View
 ///
 /// Contains all objects used for downloading and setting meals and meal details
-///
-/// - Attention: This class is run entirely on the main thread due to setting
-/// multiple variables through an async method.
-@MainActor
 class MainViewModel: ObservableObject {
     
     // MARK: Services
@@ -39,12 +35,13 @@ class MainViewModel: ObservableObject {
     // MARK: Functions
     
     /// Asynchronously downloads meals from the meal service API
+    @MainActor
     func getMeals() async {
         do {
             state = .loading
             meals = try await mealService.getMeals(for: selectedCategory)
-            filterMeals()
             mealsSearchResults = meals
+            filterMeals()
             state = meals.isEmpty ? .empty : .result
             
         } catch let error as MealError {
@@ -60,12 +57,13 @@ class MainViewModel: ObservableObject {
     }
     
     /// Filters meals based on filter selection
+    @MainActor
     func filterMeals() {
         switch mealFilter {
         case .alphabetical:
-            meals.sort(by: { $0.name < $1.name })
+            mealsSearchResults.sort(by: { $0.name < $1.name })
         case .id:
-            meals.sort(by: { $0.id < $1.id })
+            mealsSearchResults.sort(by: { $0.id < $1.id })
         }
     }
     
@@ -74,14 +72,14 @@ class MainViewModel: ObservableObject {
     /// User can search based on either name or id
     ///
     /// - Parameter searchText: String of what the user has currently typed
+    @MainActor
     func searchMeals(with searchText: String) {
         if searchText.isEmpty {
             mealsSearchResults = meals
         } else {
-            let filteredResults = meals.filter {
+            mealsSearchResults = meals.filter {
                 $0.name.lowercased().contains(searchText.lowercased()) ||
                 $0.id.contains(searchText) }
-            mealsSearchResults = filteredResults
         }
     }
 }

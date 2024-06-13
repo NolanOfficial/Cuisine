@@ -89,6 +89,7 @@ struct RecipeDetailsView: View {
         .navigationBarTitleDisplayMode(.inline)
         
         .task {
+            guard viewModel.state == .loading else { return }
             await viewModel.getMealDetail(for: meal)
         }
         

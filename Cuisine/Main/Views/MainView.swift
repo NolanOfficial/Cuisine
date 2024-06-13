@@ -70,6 +70,7 @@ struct MainView: View {
             }
             
             .task {
+                guard viewModel.state == .loading else { return }
                 await viewModel.getMeals()
             }
 
